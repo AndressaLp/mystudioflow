@@ -213,10 +213,11 @@ function ClientModal({ onClose, onSave }: { onClose: () => void; onSave: (c: Cli
             placeholder="email@exemplo.com"
           />
           <div>
-            <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-brand-900/60">
+            <label htmlFor="notes" className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-brand-900/60">
               Observações
             </label>
             <textarea
+              id="notes"
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
               rows={3}

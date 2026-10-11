@@ -50,12 +50,13 @@ function LoginPage() {
 
           <form onSubmit={onSubmit} className="mt-10 space-y-5">
             <div>
-              <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-brand-900/60">
+              <label htmlFor="email" className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-brand-900/60">
                 E-mail
               </label>
               <div className="relative">
                 <Mail className="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-brand-900/40" />
                 <input
+                  id="email"
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -66,7 +67,7 @@ function LoginPage() {
             </div>
             <div>
               <div className="mb-1.5 flex items-center justify-between">
-                <label className="block text-xs font-semibold uppercase tracking-wider text-brand-900/60">
+                <label htmlFor="password" className="block text-xs font-semibold uppercase tracking-wider text-brand-900/60">
                   Senha
                 </label>
                 <Link
@@ -79,6 +80,7 @@ function LoginPage() {
               <div className="relative">
                 <Lock className="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-brand-900/40" />
                 <input
+                  id="password"
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}

@@ -219,7 +219,6 @@ function ServiceModal({
             </select>
             {category === "__custom__" && (
               <input
-                autoFocus
                 value={customCategory}
                 onChange={(e) => setCustomCategory(e.target.value)}
                 placeholder="Nome da nova categoria"

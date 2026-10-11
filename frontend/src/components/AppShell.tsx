@@ -51,8 +51,11 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       {mobileOpen && (
         <>
           <div
+            role="button"
+            tabIndex={0}
             className="fixed inset-0 z-40 bg-brand-900/40 backdrop-blur-sm lg:hidden"
             onClick={() => setMobileOpen(false)}
+            onKeyDown={(e) => e.key === "Enter" && setMobileOpen(false)}
           />
           <aside className="fixed left-0 top-0 z-50 flex h-full w-72 flex-col border-r border-border bg-card px-5 py-7 lg:hidden animate-float-in">
             <button

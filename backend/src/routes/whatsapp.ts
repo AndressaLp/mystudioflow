@@ -26,7 +26,7 @@ router.post("/webhook", async (req: Request, res: Response): Promise<void> => {
     const senderPn: string = msg?.key?.senderPn ?? "";
     // senderPn tem o número real quando remoteJid vem como LID (formato novo do WhatsApp)
     const phoneSource = senderPn || remoteJid;
-    const phoneRaw = phoneSource.replace(/@.*$/, "");
+    const phoneRaw = phoneSource.split("@")[0] ?? "";
     if (!phoneRaw) return;
 
     const text: string =

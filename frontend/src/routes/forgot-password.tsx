@@ -66,17 +66,17 @@ function ForgotPasswordPage() {
 
             <form onSubmit={onSubmit} className="mt-8 space-y-5">
               <div>
-                <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-brand-900/60">
+                <label htmlFor="email" className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-brand-900/60">
                   E-mail
                 </label>
                 <div className="relative">
                   <Mail className="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-brand-900/40" />
                   <input
+                    id="email"
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="seu@email.com"
-                    autoFocus
                     className="h-12 w-full rounded-xl border border-border bg-white pl-11 pr-4 text-sm placeholder:text-brand-900/30 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
                   />
                 </div>
