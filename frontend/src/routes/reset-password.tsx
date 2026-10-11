@@ -124,16 +124,6 @@ function ResetPasswordPage() {
               </div>
 
               <button
-                    type="password"
-                    value={confirm}
-                    onChange={(e) => setConfirm(e.target.value)}
-                    placeholder="Repita a senha"
-                    className="h-12 w-full rounded-xl border border-border bg-white pl-11 pr-4 text-sm placeholder:text-brand-900/30 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
-                  />
-                </div>
-              </div>
-
-              <button
                 type="submit"
                 disabled={loading}
                 className="flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-brand-600 text-sm font-semibold text-white shadow-lg shadow-brand-600/20 transition-all hover:bg-brand-500 disabled:opacity-70"
