@@ -13,6 +13,7 @@ import { startReminderJob } from "./jobs/reminderJob";
 import prisma from "./lib/prisma";
 
 const app = express();
+app.disable('x-powered-by');
 
 const allowedOrigins = (process.env.FRONTEND_URL || "http://localhost:5173")
   .split(",")

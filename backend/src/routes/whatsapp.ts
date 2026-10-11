@@ -132,7 +132,7 @@ router.post("/instance", async (req: AuthRequest, res) => {
       const errText = await response.text();
       const alreadyExists = response.status === 409 || errText.includes("already in use");
       if (!alreadyExists) {
-        console.log(`[instance] Evolution API error ${response.status}:`, errText);
+        console.log(`[instance] Evolution API error ${response.status}:`, errText.replace(/[\r\n]/g, ' '));
         return res.status(response.status).json({ error: errText });
       }
     }
