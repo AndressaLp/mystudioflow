@@ -89,12 +89,23 @@ async function main() {
       create: { ...a, userId: user.id },
     });
   }
-  console.log(`✅ ${appointmentsData.length} agendamentos criados`);
+  console.log(`${appointmentsData.length} agendamentos criados`);
 
-  console.log("\n🎉 Seed concluído!");
+  console.log("\nSeed concluído");
   console.log("   Login: isabel@studio.com / demo123");
 }
 
-main()
-  .catch(console.error)
-  .finally(() => void prisma.$disconnect());
+async function run(){
+  try{
+    await main();
+  }catch(error){
+    console.error(error);
+    process.exitCode = 1;
+  }finally{
+    await prisma.$disconnect();
+  }
+}
+
+run();
+
+
