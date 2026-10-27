@@ -90,29 +90,30 @@ function ResetPasswordPage() {
 
             <form onSubmit={onSubmit} className="mt-8 space-y-5">
               <div>
-                <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-brand-900/60">
+                <label htmlFor="password" className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-brand-900/60">
                   Nova senha
                 </label>
                 <div className="relative">
                   <Lock className="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-brand-900/40" />
                   <input
+                    id="password"
                     type="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="Mínimo 6 caracteres"
-                    autoFocus
                     className="h-12 w-full rounded-xl border border-border bg-white pl-11 pr-4 text-sm placeholder:text-brand-900/30 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-brand-900/60">
+                <label htmlFor="confirm-password" className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-brand-900/60">
                   Confirmar nova senha
                 </label>
                 <div className="relative">
                   <Lock className="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-brand-900/40" />
                   <input
+                    id="confirm-password"
                     type="password"
                     value={confirm}
                     onChange={(e) => setConfirm(e.target.value)}

@@ -55,7 +55,7 @@ function getMonthGrid(year: number, month: number): (Date | null)[] {
   const first = new Date(year, month, 1);
   const firstDow = first.getDay() === 0 ? 6 : first.getDay() - 1;
   const daysInMonth = new Date(year, month + 1, 0).getDate();
-  const cells: (Date | null)[] = Array(firstDow).fill(null);
+  const cells: (Date | null)[] = new Array(firstDow).fill(null);
   for (let d = 1; d <= daysInMonth; d++) cells.push(new Date(year, month, d));
   while (cells.length % 7 !== 0) cells.push(null);
   return cells;
@@ -467,6 +467,8 @@ function WeekDayColumn({
       {appointments.map((apt) => (
         <div
           key={apt.id}
+          role="button"
+          tabIndex={0}
           draggable
           onDragStart={(e) => {
             e.dataTransfer.setData("aptId", apt.id);
@@ -545,6 +547,8 @@ function MonthView({
 
           return (
             <div
+              role="button"
+              tabIndex={0}
               key={i}
               onClick={() => d && onDayClick(d)}
               className={cn(
@@ -637,6 +641,8 @@ function TimeGrid({
 
       {/* Appointment area */}
       <div
+        role="button"
+        tabIndex={0}
         ref={gridRef}
         className="flex-1 relative"
         style={{ height: TOTAL_H }}
@@ -648,6 +654,8 @@ function TimeGrid({
           return (
             <div
               key={h}
+              role="button"
+              tabIndex={0}
               style={{ position: "absolute", top: 16 + i * HOUR_H, left: 0, right: 0, height: HOUR_H }}
               className="border-t border-border/60 group cursor-pointer hover:bg-brand-50 transition-colors"
               onClick={() => onNewAt(hStr)}
@@ -683,6 +691,8 @@ function AptBlock({
 
   return (
     <div
+      role="button"
+      tabIndex={0}
       draggable
       onDragStart={(e) => {
         e.dataTransfer.setData("aptId", apt.id);

@@ -13,8 +13,16 @@ import { startReminderJob } from "./jobs/reminderJob";
 import prisma from "./lib/prisma";
 
 const app = express();
+app.disable('x-powered-by');
 
-app.use(cors({ origin: "*", methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"] }));
+const allowedOrigins = (process.env.FRONTEND_URL || "http://localhost:5173")
+  .split(",")
+  .map((o) => o.trim());
+
+app.use(cors({
+  origin: allowedOrigins,
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+}));
 app.use(express.json());
 
 app.use("/api/auth", authRoutes);

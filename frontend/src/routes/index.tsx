@@ -50,12 +50,13 @@ function LoginPage() {
 
           <form onSubmit={onSubmit} className="mt-10 space-y-5">
             <div>
-              <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-brand-900/60">
+              <label htmlFor="email" className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-brand-900/60">
                 E-mail
               </label>
               <div className="relative">
                 <Mail className="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-brand-900/40" />
                 <input
+                  id="email"
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -66,7 +67,7 @@ function LoginPage() {
             </div>
             <div>
               <div className="mb-1.5 flex items-center justify-between">
-                <label className="block text-xs font-semibold uppercase tracking-wider text-brand-900/60">
+                <label htmlFor="password" className="block text-xs font-semibold uppercase tracking-wider text-brand-900/60">
                   Senha
                 </label>
                 <Link
@@ -79,6 +80,7 @@ function LoginPage() {
               <div className="relative">
                 <Lock className="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-brand-900/40" />
                 <input
+                  id="password"
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
@@ -114,30 +116,20 @@ function LoginPage() {
 
           <div className="space-y-8">
             <blockquote className="font-serif text-3xl italic leading-snug text-white">
-              "Organizei minha agenda em um dia e dobrei meus retornos no primeiro mês."
+              "Otimizei meu tempo com confirmações de agendamentos e consegui ter uma visão clara da minha agenda e faturamento com o StudioFlow."
             </blockquote>
             <div className="flex items-center gap-4">
               <div className="flex size-12 items-center justify-center rounded-full bg-brand-500 font-serif text-lg font-semibold">
-                CR
+                IR
               </div>
               <div>
-                <p className="font-semibold">Carla Ribeiro</p>
-                <p className="text-sm text-white/60">Lash Designer, São Paulo</p>
+                <p className="font-semibold">Isabel Rocha</p>
+                <p className="text-sm text-white/60">Proprietária, Studio Isabel Rocha Beauty</p>
               </div>
             </div>
           </div>
 
-          <div className="flex items-center gap-6 text-xs text-white/60">
-            <div>
-              <p className="font-serif text-3xl text-white">2.4k+</p>
-              <p>profissionais</p>
-            </div>
-            <div className="h-10 w-px bg-white/20" />
-            <div>
-              <p className="font-serif text-3xl text-white">98%</p>
-              <p>satisfação</p>
-            </div>
-          </div>
+          <div />
         </div>
       </div>
     </div>
